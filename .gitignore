@@ -1,21 +1,24 @@
 # Ignore everything
-*
+/*
 
-# Keep Gradle build scripts
+# Allow Gradle configs
 !build.gradle.kts
 !settings.gradle.kts
 !gradle.properties
 
-# Keep Gradle wrapper
+# Allow Gradle wrapper
 !gradlew
 !gradlew.bat
+!gradle/
+!gradle/wrapper/
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
 
-# Keep source directories (only if you have them)
-!**/src/**
+# Allow all source directories
+!src/
+!src/**
 
-# Optional: keep README or license
+# Allow these metadata files
+!.gitignore
 !README.md
 !LICENSE
-!.gitignore
