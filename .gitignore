@@ -22,3 +22,6 @@
 !.gitignore
 !README.md
 !LICENSE
+
+# Allow github
+!.github/*

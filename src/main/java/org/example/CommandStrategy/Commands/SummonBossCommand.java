@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class SummonBossCommand implements ICommand {
-    public static final String BACKEND_URL = "https://b90e3a546d2f.ngrok-free.app";
+    public static final String BACKEND_URL = "https://minecraftevent-bossmod-backend.fly.dev";
     @Override
     public String getName() {
         return "summon";
@@ -52,7 +52,6 @@ public class SummonBossCommand implements ICommand {
 
         event.reply("チームが確認されました！ボスを召喚します…").queue();
 
-        // TODO: Trigger your Minecraft summon logic here
         final String teamName = selectedRole.getName();
         System.out.println("Summoning boss for team: " + selectedRole.getName());
 
