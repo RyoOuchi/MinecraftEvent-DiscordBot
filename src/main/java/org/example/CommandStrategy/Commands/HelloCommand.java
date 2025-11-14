@@ -17,6 +17,6 @@ public class HelloCommand implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        event.reply("👋 Hello " + event.getUser().getAsMention() + "!").setEphemeral(true).queue();
+        event.reply("👋 おはよー！Tips書いてね" + event.getUser().getAsMention() + "さん!").setEphemeral(true).queue();
     }
 }

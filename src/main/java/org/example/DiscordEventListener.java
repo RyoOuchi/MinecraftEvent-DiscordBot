@@ -26,21 +26,17 @@ public class DiscordEventListener extends ListenerAdapter {
         registerCommands(bot.getShardManager());
     }
 
-    private void registerCommands(ShardManager jda) {
-        Guild guild = jda.getGuildById("1437786444759437334");
-        if (guild == null) {
-            System.out.println("Guild not found! The bot might not be in that server.");
-            return;
-        }
-
-        guild.updateCommands().addCommands(
-                commandManager.getCommands().values().stream()
-                        .map(cmd -> Commands.slash(cmd.getName(), cmd.getDescription())
-                                .addOptions(cmd.getOptions()))
-                        .toList()
-        ).queue(
-                success -> System.out.println("Commands registered: " + success.size()),
-                error -> System.err.println("Failed to register commands: " + error.getMessage())
+    private void registerCommands(ShardManager shardManager) {
+        shardManager.getShards().forEach(jda ->
+                jda.updateCommands().addCommands(
+                        commandManager.getCommands().values().stream()
+                                .map(cmd -> Commands.slash(cmd.getName(), cmd.getDescription())
+                                        .addOptions(cmd.getOptions()))
+                                .toList()
+                ).queue(
+                        success -> System.out.println("Global commands registered"),
+                        error -> System.err.println("Error: " + error.getMessage())
+                )
         );
     }
 
