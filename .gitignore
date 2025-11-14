@@ -25,3 +25,7 @@
 
 # Allow github
 !.github/**
+
+# Allow fly configs
+!fly.toml
+!Dockerfile
