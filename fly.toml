@@ -1,0 +1,15 @@
+# fly.toml app configuration file generated for minecraftbossfightbot on 2025-11-14T11:43:14+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'minecraftbossfightbot'
+primary_region = 'nrt'
+
+[processes]
+  app = "java -jar app.jar"
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
